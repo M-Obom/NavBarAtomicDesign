@@ -1,46 +1,12 @@
-import PropTypes from "prop-types";
-import InputMolecule from "../components/molecules/InputMolecule";
-import NavListMolecule from "../components/molecules/NavListMolecule";
-const Header = (props) => {
-  const { brand } = props;
+import NavList from "../components/organisms/NavList";
+const Header = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="!#">
-            {brand}
-          </a>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="!#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <NavListMolecule />
-            </ul>
-            <form className="d-flex">
-              <InputMolecule type="input" placeholder="Search..." />
-            </form>
-          </div>
-        </div>
+        <NavList />
       </nav>
     </div>
   );
 };
 
-Header.defaultProps = {
-  brand: "Student Portal",
-};
-
-Header.propTypes = {
-  brand: PropTypes.string.isRequired,
-};
 export default Header;
